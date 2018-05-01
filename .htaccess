@@ -32,9 +32,6 @@ satisfy all
     Deny from all
 </Files>
 
-Header unset ETag
-FileETag none
-
 Options -Indexes
 
 <IfModule mod_headers.c>
