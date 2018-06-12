@@ -1,7 +1,7 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . '/header_template.php');
 
-if(!bot_detected()) {
+if (!bot_detected()) {
     mehoubarim_updateVisitor($_SESSION['currentPageName']);
 }
 
