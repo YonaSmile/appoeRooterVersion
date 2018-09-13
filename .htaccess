@@ -4,8 +4,8 @@ AddDefaultCharset UTF-8
 Options +FollowSymlinks
 RewriteEngine On
 RewriteBase /
-RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/?$  index.php?slug=$1&id=$2 [NC,L]
-RewriteRule ^([a-zA-Z0-9-]+)/?$  index.php?slug=$1 [NC,L]
+RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)$  index.php?slug=$1&id=$2 [NC,L]
+RewriteRule ^([a-zA-Z0-9-]+)/$  index.php?slug=$1 [NC,L]
 RewriteRule ^hibour$  hibour.php [L]
 RewriteRule ^$  index.php [L]
 </IfModule>
