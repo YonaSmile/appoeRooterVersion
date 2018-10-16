@@ -5,7 +5,7 @@ Options +FollowSymlinks
 RewriteEngine On
 RewriteBase /
 RewriteRule ^hibour$  hibour.php [L]
-RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)$  index.php?slug=$1&type=$2&id=$3 [NC,L]
+RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)$  index.php?type=$1&slug=$2&typeSlug=$3 [NC,L]
 RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)$  index.php?slug=$1&id=$2 [NC,L]
 RewriteRule ^([a-zA-Z0-9-]+)/$  index.php?slug=$1 [NC,L]
 RewriteRule ^$  index.php [L]
