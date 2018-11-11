@@ -12,8 +12,8 @@ if (class_exists('App\Plugin\Cms\Cms')) {
     $CmsContent = new \App\Plugin\Cms\CmsContent($Cms->getId(), LANG);
 
     //Show page content in template
-    \App\Template::set(TEMPLATES_PATH . $Cms->getSlug() . '.php', $CmsContent->getData(), true);
-    \App\Template::show();
+    $Template = new \App\Template(TEMPLATES_PATH . $Cms->getSlug() . '.php', $CmsContent->getData(), true);
+    $Template->show();
 }
 
 include($_SERVER['DOCUMENT_ROOT'] . '/footer_template.php');
