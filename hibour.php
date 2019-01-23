@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/jpg" href="<?= WEB_APP_URL; ?>images/appoe-favicon.jpg">
+    <link rel="icon" type="image/jpg" href="<?= WEB_APP_URL; ?>images/appoe-favicon.png">
     <link rel="stylesheet" type="text/css" href="<?= APP_ROOT; ?>css/font.css">
     <link rel="stylesheet" type="text/css" href="<?= APP_ROOT; ?>css/appoe.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
