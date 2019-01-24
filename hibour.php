@@ -15,8 +15,8 @@
 <body>
 <div id="hibourContainer">
     <div id="hibourContent">
-        <h4 id="hibourTitle">
-            <?= trans('Accès au manager'); ?></h4>
+        <img src="<?= WEB_APP_IMG; ?>appoe-logo-white.png" alt="APPOE"
+             style="width: 100px;margin: 0 auto;display: block;">
         <form id="loginForm" action="" method="post">
             <input type="text" maxlength="70" name="loginInput" id="emailInput"
                    value="<?= !empty($_POST['loginInput']) ? $_POST['loginInput'] : ''; ?>"
