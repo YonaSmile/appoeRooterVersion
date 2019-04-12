@@ -12,7 +12,7 @@ if (class_exists('App\Plugin\Cms\Cms')) {
     $CmsContent = new \App\Plugin\Cms\CmsContent($Cms->getId(), LANG);
 
     //Show page content in template
-    $Template = new \App\Template(TEMPLATES_PATH . $Cms->getSlug() . '.php', $CmsContent->getData(), true);
+    $Template = new \App\Template(WEB_PATH . $Cms->getSlug() . '.php', $CmsContent->getData(), true);
     echo $Template->get();
 }
 
