@@ -7,15 +7,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/jpg" href="<?= WEB_APP_URL; ?>images/appoe-favicon.png">
-    <link rel="stylesheet" type="text/css" href="<?= APP_ROOT; ?>css/font.css">
-    <link rel="stylesheet" type="text/css" href="<?= APP_ROOT; ?>css/appoe.css">
+    <link rel="stylesheet" type="text/css" href="<?= WEB_TEMPLATE_URL; ?>css/appoe.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <title>Connexion à <?= WEB_TITLE; ?></title>
 </head>
 <body>
 <div id="hibourContainer">
     <div id="hibourContent">
-        <img src="<?= WEB_APP_IMG; ?>appoe-logo-white.png" alt="APPOE"
+        <img src="<?= getLogo(true); ?>" alt="APPOE"
              style="width: 100px;margin:0 auto;display: block;">
         <form id="loginForm" action="" method="post">
             <input type="text" maxlength="70" name="loginInput" id="emailInput"
