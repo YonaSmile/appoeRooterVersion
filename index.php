@@ -9,7 +9,7 @@ if (class_exists('App\Plugin\Cms\Cms')) {
 
     //Update visitor stats
     if (!bot_detected()) {
-        mehoubarim_updateVisitor(ucfirst(mb_strtolower($_SESSION['currentPageName'])));
+        mehoubarim_updateVisitor(getPageName());
     }
 
     //Get page content
