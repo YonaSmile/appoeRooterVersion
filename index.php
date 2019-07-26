@@ -9,7 +9,7 @@ if (class_exists('App\Plugin\Cms\Cms')) {
 
     //Update visitor stats
     if (!bot_detected()) {
-        mehoubarim_updateVisitor(getPageName());
+        mehoubarim_updateVisitor(getPageMenuName());
     }
 
     //Get page content
