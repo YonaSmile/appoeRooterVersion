@@ -32,7 +32,7 @@ require_once(WEB_SYSTEM_PATH . 'auth_user.php');
         <script type="text/javascript">
             $(document).ready(function (n) {
                 $("#loginForm").on("submit", function (n) {
-                    "" != $("#loginInput").val() && "" != $("#passwordInput").val() || n.preventDefault()
+                    "" !== $("#loginInput").val() && "" !== $("#passwordInput").val() || n.preventDefault()
                 });
             });
         </script>
