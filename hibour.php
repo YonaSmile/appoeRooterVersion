@@ -7,7 +7,8 @@ require_once(WEB_SYSTEM_PATH . 'auth_user.php');
 <html lang="<?= LANG; ?>">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/jpg" href="<?= WEB_APP_URL; ?>images/appoe-favicon.png">
     <link rel="stylesheet" type="text/css" href="<?= WEB_TEMPLATE_URL; ?>css/appoe.css">
@@ -25,8 +26,8 @@ require_once(WEB_SYSTEM_PATH . 'auth_user.php');
                    required="required" placeholder="<?= trans('Login'); ?>">
             <input type="password" id="passwordInput" name="passwordInput" required="required"
                    placeholder="<?= trans('Mot de passe'); ?>">
-            <?= getFieldsControls(); ?>
-            <?php App\Flash::display(); ?>
+            <?= getFieldsControls();
+            App\Flash::display(); ?>
             <button type="submit" name="APPOECONNEXION" id="submitButton"><?= trans('Connexion'); ?></button>
         </form>
         <script type="text/javascript">
