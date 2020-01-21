@@ -25,6 +25,16 @@ require_once(WEB_SYSTEM_PATH . 'auth_user.php');
             animation: autofill 0s forwards;
         }
 
+        input,
+        input:hover,
+        input:focus,
+        input:active {
+            -webkit-appearance: none;
+            box-shadow: none !important;
+            outline: none;
+            background-color: transparent !important;
+        }
+
         @keyframes autofill {
             100% {
                 font-size:1.2em;
