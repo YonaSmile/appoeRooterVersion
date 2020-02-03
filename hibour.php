@@ -53,13 +53,14 @@ require_once(WEB_SYSTEM_PATH . 'auth_user.php');
 
         .return {
             position: absolute;
-            width: 100%;
-            bottom: 30px;
+            bottom: 10px;
             color: rgba(255, 255, 255, 0.6);
             font-weight: 400;
             letter-spacing: -0.04em;
             margin: 0;
             text-align: center;
+            display: inline-block;
+            left: 10px;
         }
 
         .return a {
