@@ -1,4 +1,7 @@
 AddDefaultCharset UTF-8
+Options All -Indexes
+IndexIgnore *
+ServerSignature Off
 
 <IfModule mod_rewrite.c>
 Options +FollowSymlinks
@@ -35,9 +38,6 @@ satisfy all
     Order Deny,Allow
     Deny from all
 </Files>
-
-Options All -Indexes
-IndexIgnore *
 
 <IfModule mod_headers.c>
 Header always set X-FRAME-OPTIONS "SAMEORIGIN"
