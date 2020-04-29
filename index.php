@@ -7,17 +7,17 @@ include($_SERVER['DOCUMENT_ROOT'] . '/header_template.php');
 
 if (class_exists('App\Plugin\Cms\Cms')) {
 
-    //Update visitor stats
-    if (!bot_detected()) {
-        mehoubarim_updateVisitor(getPageData());
-    }
+	//Update visitor stats
+	if (!bot_detected()) {
+		mehoubarim_updateVisitor(getPageData());
+	}
 
-    //Get page content
-    $CmsContent = new CmsContent($Cms->getId(), LANG);
+	//Get page content
+	$CmsContent = new CmsContent($Cms->getId(), LANG);
 
-    //Show page content in template
-    $Template = new Template(WEB_PATH . $Cms->getFilename() . '.php', $CmsContent->getData(), true);
-    echo $Template->get();
+	//Show page content in template
+	$Template = new Template(WEB_PATH . $Cms->getFilename() . '.php', $CmsContent->getData(), true);
+	echo $Template->get();
 }
 
 include($_SERVER['DOCUMENT_ROOT'] . '/footer_template.php');
