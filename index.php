@@ -21,12 +21,12 @@ if ( class_exists( 'App\Plugin\Cms\Cms' ) ) {
 	//Show page content in template with cache (if is user)
 	if ( isset( $_GET['access_method'] ) || ! $Cache->start() ):
 
-		include( WEB_PATH . 'header.php' );
+		inc( WEB_PATH . 'header.php' );
 
 		$Template = new Template( WEB_PATH . getPageFilename() . '.php', $CmsContent->getData(), true );
 		echo $Template->get();
 
-		include( WEB_PATH . 'footer.php' );
+		inc( WEB_PATH . 'footer.php' );
 
 	endif;
 	$Cache->end();

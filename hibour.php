@@ -170,6 +170,10 @@ require_once( WEB_SYSTEM_PATH . 'auth_user.php' );
             display: block;
         }
 
+        #realHour{
+            font-weight: 800;
+        }
+
         @media screen and (max-width: 390px) {
             #hibourContent img {
                 width: 100px;
