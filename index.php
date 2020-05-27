@@ -5,7 +5,6 @@ use App\Template;
 use App\Cache;
 
 require_once( $_SERVER['DOCUMENT_ROOT'] . '/app/system/middleware_public.php' );
-includePluginsFiles();
 
 if ( class_exists( 'App\Plugin\Cms\Cms' ) ) {
 
