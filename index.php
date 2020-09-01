@@ -30,4 +30,6 @@ if (class_exists('App\Plugin\Cms\Cms')) {
 
     endif;
     $Cache->end();
+
+    getAsset('adminDashPublic');
 }
