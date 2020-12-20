@@ -174,6 +174,12 @@ require_once(WEB_SYSTEM_PATH . 'auth_user.php');
 </div>
 <p class="return"><a href="/">Revenir au site</a></p>
 <script>
+    var form = document.getElementById('loginForm').addEventListener('click', function (e){
+        if(!e.isTrusted){
+            e.preventDefault();
+            return false;
+        }
+    });
     var realHourContainer = document.getElementById('realHour');
     window.setInterval(function () {
         var d = new Date();
