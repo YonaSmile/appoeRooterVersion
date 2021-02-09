@@ -15,7 +15,7 @@ if (class_exists('App\Plugin\Cms\Cms')) {
     }
 
     //Get page content
-    $CmsContent = new CmsContent($Cms->getId(), LANG);
+    $CmsContent = new CmsContent(getPageCmsId(), getPageLang());
     $Cache = new CmsCache(getPageSlug() . '.php');
 
     //Show page content in template with cache (if is user)
