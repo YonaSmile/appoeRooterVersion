@@ -7,181 +7,32 @@ require_once(WEB_SYSTEM_PATH . 'auth_user.php');
 <html lang="<?= LANG; ?>">
 <head>
     <meta charset="UTF-8">
-    <?= getAppoeFavicon(); ?>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="<?= WEB_TEMPLATE_URL; ?>images/appoe-favicon.png">
     <link rel="stylesheet" type="text/css" href="<?= WEB_TEMPLATE_URL; ?>css/appoe.css">
     <title>Connexion à <?= WEB_TITLE; ?></title>
-    <style>
-        html, body {
-            background: #fff;
-        }
-
-        input,
-        input:hover,
-        input:focus,
-        input:active {
-            box-shadow: none !important;
-            outline: none;
-        }
-
-        #hibourContainer {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            box-sizing: border-box;
-            z-index: 1;
-        }
-
-        #hibourContent {
-            margin: auto;
-            min-width: 220px;
-            max-width: 450px;
-            padding: 6px;
-            box-sizing: border-box;
-            overflow: hidden;
-            z-index: 999;
-        }
-
-        #hibourContent img {
-            width: 200px;
-            margin: 0 auto 12px;
-            display: block;
-        }
-
-        #hibourContent form {
-            position: relative;
-        }
-
-        #hibourContent form input {
-            width: 100%;
-            padding: 15px 7px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-            border: 0;
-            background: #FFF !important;
-            color: #000;
-            transition: all 0.2s;
-            border-bottom: 1px solid rgba(200, 200, 200, 0.3);
-            letter-spacing: 1px !important;
-            border-radius: 0;
-        }
-
-        #hibourContent form input:,
-        #hibourContent form input:visited,
-        #hibourContent form input:valid {
-            background-color: #FFF;
-        }
-
-        #hibourContent form input:focus,
-        #hibourContent form input:hover {
-            border-bottom: 1px solid rgba(0, 0, 0, 1);
-        }
-
-        #hibourContent form button[type="submit"] {
-            float: right;
-            padding: 6px 0;
-            margin: 15px 0 0;
-            cursor: pointer;
-            box-sizing: border-box;
-            border: 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-            background: none transparent;
-            color: #000;
-            transition: all 0.3s;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        #hibourContent form button[type="submit"]:hover {
-            border-bottom: 1px solid rgba(0, 0, 0, 1);
-        }
-
-        #hibourContent form button[type="submit"]:active {
-            color: #000;
-        }
-
-        .return {
-            position: absolute;
-            bottom: 10px;
-            color: rgba(0, 0, 0, 0.6);
-            font-weight: 400;
-            letter-spacing: -0.04em;
-            margin: 0;
-            text-align: center;
-            display: inline-block;
-            left: 10px;
-        }
-
-        .return a {
-            padding-bottom: 1px;
-            color: #000;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.6);
-            -webkit-transition: border-color 0.1s ease-in;
-            transition: border-color 0.1s ease-in;
-        }
-
-        .return a:hover {
-            border-bottom-color: #000;
-        }
-
-        #dateContainer {
-            text-align: center;
-            color: #000;
-            font-size: 1em;
-            line-height: 1.1em;
-            margin-bottom: 12px;
-        }
-
-        #dateContainer span {
-            display: block;
-        }
-
-        #realHour {
-            font-weight: 800;
-        }
-
-        @media screen and (max-width: 390px) {
-            #hibourContent img {
-                width: 100px;
-                margin: 0 auto 10px;
-            }
-        }
-    </style>
+    <style>@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:200;src:url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wlxdr.ttf) format('truetype')}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdr.ttf) format('truetype')}*{box-sizing:border-box;margin:0;padding:0;font-weight:300}body{font-family:'Source Sans Pro',sans-serif;color:#fff;font-weight:300}body ::-webkit-input-placeholder{font-family:'Source Sans Pro',sans-serif;color:#fff;font-weight:300}body :-moz-placeholder{font-family:'Source Sans Pro',sans-serif;color:#fff;opacity:1;font-weight:300}body ::-moz-placeholder{font-family:'Source Sans Pro',sans-serif;color:#fff;opacity:1;font-weight:300}body :-ms-input-placeholder{font-family:'Source Sans Pro',sans-serif;color:#fff;font-weight:300}.hibourContainer{background:#50a3a2;background:linear-gradient(to bottom right,#50a3a2 0,#53e3a6 100%);position:absolute;top:0;left:0;width:100%;height:100vh;margin:0;overflow:hidden;display:flex}.hibourContainer.form-success .container h1{transform:translateY(85px);text-transform:unset !important}.container{max-width:600px;margin:auto;padding:20px 0;text-align:center}.container h1{line-height: 25px;text-transform:unset !important;font-size:40px;transition-duration:1s;transition-timing-function:ease-in;font-weight:200}form{padding:20px 0;position:relative;z-index:2}form input{-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:0;border:1px solid rgba(255,255,255,.4);background-color:rgba(255,255,255,.2);width:250px;border-radius:3px;padding:10px 15px;margin:0 auto 10px auto;display:block;text-align:center;font-size:18px;color:#fff;transition-duration:.25s;font-weight:300}form input:hover{background-color:rgba(255,255,255,.4)}form input:focus{background-color:#fff;width:300px;color:#53e3a6}form button{-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:0;background-color:#fff;border:0;padding:10px 15px;color:#53e3a6;border-radius:3px;width:250px;cursor:pointer;font-size:18px;transition-duration:.25s}form button:hover{background-color:#f5f7f9}.bg-bubbles{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}.bg-bubbles li{position:absolute;list-style:none;display:block;width:40px;height:40px;background-color:rgba(255,255,255,.15);bottom:-160px;-webkit-animation:square 25s infinite;animation:square 25s infinite;transition-timing-function:linear}.bg-bubbles li:nth-child(1){left:10%}.bg-bubbles li:nth-child(2){left:20%;width:80px;height:80px;-webkit-animation-delay:2s;animation-delay:2s;-webkit-animation-duration:17s;animation-duration:17s}.bg-bubbles li:nth-child(3){left:25%;-webkit-animation-delay:4s;animation-delay:4s}.bg-bubbles li:nth-child(4){left:40%;width:60px;height:60px;-webkit-animation-duration:22s;animation-duration:22s;background-color:rgba(255,255,255,.25)}.bg-bubbles li:nth-child(5){left:70%}.bg-bubbles li:nth-child(6){left:80%;width:120px;height:120px;-webkit-animation-delay:3s;animation-delay:3s;background-color:rgba(255,255,255,.2)}.bg-bubbles li:nth-child(7){left:32%;width:160px;height:160px;-webkit-animation-delay:7s;animation-delay:7s}.bg-bubbles li:nth-child(8){left:55%;width:20px;height:20px;-webkit-animation-delay:15s;animation-delay:15s;-webkit-animation-duration:40s;animation-duration:40s}.bg-bubbles li:nth-child(9){left:25%;width:10px;height:10px;-webkit-animation-delay:2s;animation-delay:2s;-webkit-animation-duration:40s;animation-duration:40s;background-color:rgba(255,255,255,.3)}.bg-bubbles li:nth-child(10){left:90%;width:160px;height:160px;-webkit-animation-delay:11s;animation-delay:11s}p.return{width:250px;margin:5px auto;display:flex;justify-content:space-between;align-items:center}p.return a{color:#fff;text-decoration:none}@-webkit-keyframes square{0%{transform:translateY(0)}100%{transform:translateY(-1000px) rotate(600deg)}}@keyframes square{0%{transform:translateY(0)}100%{transform:translateY(-1000px) rotate(600deg)}}</style>
 </head>
 <body>
-<div id="hibourContainer" class="content">
-    <div id="hibourContent" class="card">
-        <div class="card-body">
-            <img src="<?= getLogo(APP_IMG_URL . 'appoe-logo-black-sm.png'); ?>" alt="APPOE">
-            <div id="dateContainer"><span
-                        id="realHour"><?= date('H : i : s'); ?></span><span><?= displayCompleteDate(date('d/m/Y')); ?></span>
-            </div>
-            <form id="loginForm" action="" method="post">
-                <input type="text" maxlength="70" name="loginInput" id="emailInput"
-                       value="<?= !empty($_POST['loginInput']) ? $_POST['loginInput'] : ''; ?>"
-                       required="required" placeholder="<?= trans('Login'); ?>">
-                <input type="password" id="passwordInput" name="passwordInput" required="required"
-                       placeholder="<?= trans('Mot de passe'); ?>">
-                <?= getFieldsControls(); ?>
-                <span style="color:#FFF;"><?php App\Flash::display(); ?></span>
-                <button type="submit" name="APPOECONNEXION" id="submitButton"><?= trans('Connexion'); ?></button>
-            </form>
-        </div>
+<div class="hibourContainer">
+    <div class="container">
+        <div id="dateContainer"><span><?= displayCompleteDate(date('d/m/Y')); ?></span></div>
+        <h1><?= trans('Bienvenue'); ?></h1>
+        <form class="form" id="loginForm" action="" method="post">
+            <input type="text" maxlength="70" name="loginInput" id="emailInput"
+                   value="<?= !empty($_POST['loginInput']) ? $_POST['loginInput'] : ''; ?>"
+                   required="required" placeholder="<?= trans('Login'); ?>">
+            <input type="password" id="passwordInput" name="passwordInput" required="required"
+                   placeholder="<?= trans('Mot de passe'); ?>">
+            <?= getFieldsControls(); ?>
+            <button type="submit" name="APPOECONNEXION" id="login-button"><?= trans('Connexion'); ?></button>
+            <p class="return"><a href="/">‹ Revenir au site</a><img src="<?= getLogo(APP_IMG_URL . 'appoe-logo-white-sm.png'); ?>" alt="APPOE" style="width: 25px;height: 100%;"></p>
+            <span style="color:#000;"><?php App\Flash::display(); ?></span>
+        </form>
     </div>
+    <ul class="bg-bubbles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
 </div>
-<p class="return"><a href="/">Revenir au site</a></p>
-<script>
-    var form = document.getElementById('loginForm').addEventListener('click', function (e){
-        if(!e.isTrusted){
-            e.preventDefault();
-            return false;
-        }
-    });
-    var realHourContainer = document.getElementById('realHour');
-    window.setInterval(function () {
-        var d = new Date();
-        realHourContainer.innerText = (d.getHours() < 10 ? '0' + d.getHours() : d.getHours()) + ' : ' + (d.getMinutes() < 10 ? '0' + d.getMinutes() : d.getMinutes()) + ' : ' + (d.getSeconds() < 10 ? '0' + d.getSeconds() : d.getSeconds());
-    }, 1000);
-</script>
 </body>
 </html>
