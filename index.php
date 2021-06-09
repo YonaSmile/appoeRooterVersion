@@ -3,15 +3,16 @@
 use App\Plugin\Cms\CmsCache;
 use App\Plugin\Cms\CmsContent;
 use App\Plugin\Cms\CmsTemplate;
+use App\Plugin\Tracker\Tracker;
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/app/system/middleware_public.php');
 includePluginsFiles();
 
 if (class_exists('App\Plugin\Cms\Cms')) {
 
-    //Update visitor stats
-    if (!bot_detected()) {
-        mehoubarim_updateVisitor(getPageData());
+    //Update visitor tracker
+    if (!bot_detected() && class_exists('App\Plugin\Tracker\Tracker')) {
+        $Tracker = new Tracker(true);
     }
 
     //Get page content
