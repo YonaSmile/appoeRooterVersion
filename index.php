@@ -1,9 +1,9 @@
 <?php
 
+use App\Hook;
 use App\Plugin\Cms\CmsCache;
 use App\Plugin\Cms\CmsContent;
 use App\Plugin\Cms\CmsTemplate;
-use App\Plugin\Tracker\Tracker;
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/app/system/middleware_public.php');
 includePluginsFiles();
@@ -11,8 +11,8 @@ includePluginsFiles();
 if (class_exists('App\Plugin\Cms\Cms')) {
 
     //Update visitor tracker
-    if (!bot_detected() && class_exists('App\Plugin\Tracker\Tracker')) {
-        $Tracker = new Tracker(true);
+    if (!bot_detected()) {
+        Hook::apply('core_front_before_html');
     }
 
     //Get page content
