@@ -10,10 +10,7 @@ includePluginsFiles();
 
 if (class_exists('App\Plugin\Cms\Cms')) {
 
-    //Update visitor tracker
-    if (!bot_detected()) {
-        Hook::apply('core_front_before_html');
-    }
+    Hook::apply('core_front_before_html');
 
     //Get page content
     $CmsContent = new CmsContent(getPageCmsId(), getPageLang());
