@@ -1,5 +1,6 @@
 <?php
 
+use App\DB;
 use App\Hook;
 use App\Plugin\Cms\CmsCache;
 use App\Plugin\Cms\CmsContent;
@@ -8,7 +9,7 @@ use App\Plugin\Cms\CmsTemplate;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/app/system/middleware_public.php');
 includePluginsFiles();
 
-if (class_exists('App\Plugin\Cms\Cms')) {
+if (DB::checkTable(TABLEPREFIX . 'forge_plugin_cms')) {
 
     Hook::apply('core_front_before_html');
 
