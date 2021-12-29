@@ -9,7 +9,7 @@ use App\Plugin\Cms\CmsTemplate;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/app/system/middleware_public.php');
 includePluginsFiles();
 
-if (DB::checkTable(TABLEPREFIX . 'forge_plugin_cms')) {
+if (DB::checkTable(TABLEPREFIX . 'appoe_plugin_cms')) {
 
     Hook::apply('core_front_before_html');
 
